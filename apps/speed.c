@@ -1683,6 +1683,9 @@ int speed_main(int argc, char **argv)
         571, 253 /* X25519 */,
     };
 
+	
+	  size_t len;
+	  
     int ecdsa_doit[EC_NUM] = { 0 };
     int ecdh_doit[EC_NUM] = { 0 };
 #endif /* OPENSSL_NO_EC */
@@ -3499,7 +3502,8 @@ int speed_main(int argc, char **argv)
             /* Perform SM9 verification test */
             for (i = 0; i < loopargs_len; i++) {
             	loopargs[i].sm9sk[testnum] = SM9_extract_private_key(loopargs[i].sm9mst[testnum], sm9enc_id, sm9enc_idlen);
-                size_t len = loopargs[i].cipherlen;
+                //size_t len = loopargs[i].cipherlen;
+				len = loopargs[i].cipherlen;
                 st = SM9_decrypt(NID_sm3, loopargs[i].buf2, loopargs[i].cipherlen,
                                  loopargs[i].buf, &len, loopargs[i].sm9sk[testnum]);
                 if (st == 0)
