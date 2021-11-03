@@ -1,0 +1,327 @@
+	cl  /I "." /I "..\include" -I "C:\Program Files\Java\jdk1.8.0_161\include" -I "C:\Program Files\Java\jdk1.8.0_161\include\win32" -DNDEBUG -W3 -wd4090 -Gs0 -GF -Gy -nologo -DOPENSSL_SYS_WIN32  -DWIN32_LEAN_AND_MEAN -DUNICODE -D_UNICODE /O2 /MD  -c "GmSSL.c"
+GmSSL.c
+	cl  /I "." /I "..\include" -I "C:\Program Files\Java\jdk1.8.0_161\include" -I "C:\Program Files\Java\jdk1.8.0_161\include\win32" -DNDEBUG -W3 -wd4090 -Gs0 -GF -Gy -nologo -DOPENSSL_SYS_WIN32  -DWIN32_LEAN_AND_MEAN -DUNICODE -D_UNICODE /O2 /MD  -c "gmssl_err.c"
+gmssl_err.c
+	echo "**11***" gmssljni.dll
+
+E:\code2\GmSSL-1\java>setlocal
+
+E:\code2\GmSSL-1\java>set SERVICE_NAME=SimpleEchoServer 
+
+E:\code2\GmSSL-1\java>set PR_INSTALL=E:\javadaemon\prunsrv.exe 
+
+E:\code2\GmSSL-1\java>set PR_DESCRIPTION="Simple Echo Server Service" 
+
+E:\code2\GmSSL-1\java>REM Service log configuration 
+
+E:\code2\GmSSL-1\java>set PR_LOGPREFIX=SimpleEchoServer 
+
+E:\code2\GmSSL-1\java>set PR_LOGPATH=E:\javadaemon\\ 
+
+E:\code2\GmSSL-1\java>set PR_STDOUTPUT=E:\javadaemon\\stdout.txt 
+
+E:\code2\GmSSL-1\java>set PR_STDERROR=E:\javadaemon\\stderr.txt 
+
+E:\code2\GmSSL-1\java>set PR_LOGLEVEL=Debug 
+
+E:\code2\GmSSL-1\java>REM Path to java installation 
+
+E:\code2\GmSSL-1\java>set PR_JVM=C:\Program Files\Java\jdk1.8.0_161\jre\bin\server\jvm.dll 
+
+E:\code2\GmSSL-1\java>set PR_CLASSPATH=simpleechoserver.jar 
+
+E:\code2\GmSSL-1\java>REM Startup configuration 
+
+E:\code2\GmSSL-1\java>set PR_STARTUP=auto 
+
+E:\code2\GmSSL-1\java>set PR_STARTMODE=jvm 
+
+E:\code2\GmSSL-1\java>set PR_STARTCLASS=Prunssrv 
+
+E:\code2\GmSSL-1\java>set PR_STARTMETHOD=prunsrvStartServer 
+
+E:\code2\GmSSL-1\java>REM Shutdown configuration 
+
+E:\code2\GmSSL-1\java>set PR_STOPMODE=jvm 
+
+E:\code2\GmSSL-1\java>set PR_STOPCLASS=Prunssrv 
+
+E:\code2\GmSSL-1\java>set PR_STOPMETHOD=prunsrvStopServer 
+
+E:\code2\GmSSL-1\java>set PR_STOPTIMEOUT=120 
+
+E:\code2\GmSSL-1\java>REM JVM configuration 
+
+E:\code2\GmSSL-1\java>set PR_JVMMS=256 
+
+E:\code2\GmSSL-1\java>set PR_JVMMX=1024 
+
+E:\code2\GmSSL-1\java>set PR_JVMSS=4000 
+
+E:\code2\GmSSL-1\java>REM JVM options 
+
+E:\code2\GmSSL-1\java>set prunsrv_port=8080 
+
+E:\code2\GmSSL-1\java>set prunsrv_server=localhost 
+
+E:\code2\GmSSL-1\java>set PR_JVMOPTIONS=-Dprunsrv.port=8080;-Dprunsrv.server=localhost 
+
+E:\code2\GmSSL-1\java>REM current file 
+
+E:\code2\GmSSL-1\java>set "SELF=E:\javadaemon\service.bat" 
+
+E:\code2\GmSSL-1\java>REM current directory 
+
+E:\code2\GmSSL-1\java>set "CURRENT_DIR=E:\code2\GmSSL-1\java" 
+
+E:\code2\GmSSL-1\java>REM start - This takes the input from installService and places it between x's 
+
+E:\code2\GmSSL-1\java>REM - if there are none then you get xx as a null check 
+
+E:\code2\GmSSL-1\java>if "x"**11***"x" == "xx" goto displayUsage 
+
+E:\code2\GmSSL-1\java>set SERVICE_CMD="**11***" 
+
+E:\code2\GmSSL-1\java>REM ahift moves to next field 
+
+E:\code2\GmSSL-1\java>shift
+
+E:\code2\GmSSL-1\java>if "xgmssljni.dllx" == "xx" goto checkServiceCmd 
+
+E:\code2\GmSSL-1\java>if /I "**11***" == install goto doInstall 
+
+E:\code2\GmSSL-1\java>if /I "**11***" == remove goto doRemove 
+
+E:\code2\GmSSL-1\java>if /I "**11***" == uninstall goto doRemove 
+
+E:\code2\GmSSL-1\java>echo Unknown parameter ""**11***"" 
+Unknown parameter ""**11***""
+
+E:\code2\GmSSL-1\java>echo.
+
+
+E:\code2\GmSSL-1\java>echo Usage: service.bat install/remove 
+Usage: service.bat install/remove
+
+E:\code2\GmSSL-1\java>goto end 
+
+E:\code2\GmSSL-1\java>echo Exiting service.bat ... 
+Exiting service.bat ...
+
+E:\code2\GmSSL-1\java>cd "E:\code2\GmSSL-1\java" 
+	echo "**22***" GmSSL.obj gmssl_err.obj
+
+E:\code2\GmSSL-1\java>setlocal
+
+E:\code2\GmSSL-1\java>set SERVICE_NAME=SimpleEchoServer 
+
+E:\code2\GmSSL-1\java>set PR_INSTALL=E:\javadaemon\prunsrv.exe 
+
+E:\code2\GmSSL-1\java>set PR_DESCRIPTION="Simple Echo Server Service" 
+
+E:\code2\GmSSL-1\java>REM Service log configuration 
+
+E:\code2\GmSSL-1\java>set PR_LOGPREFIX=SimpleEchoServer 
+
+E:\code2\GmSSL-1\java>set PR_LOGPATH=E:\javadaemon\\ 
+
+E:\code2\GmSSL-1\java>set PR_STDOUTPUT=E:\javadaemon\\stdout.txt 
+
+E:\code2\GmSSL-1\java>set PR_STDERROR=E:\javadaemon\\stderr.txt 
+
+E:\code2\GmSSL-1\java>set PR_LOGLEVEL=Debug 
+
+E:\code2\GmSSL-1\java>REM Path to java installation 
+
+E:\code2\GmSSL-1\java>set PR_JVM=C:\Program Files\Java\jdk1.8.0_161\jre\bin\server\jvm.dll 
+
+E:\code2\GmSSL-1\java>set PR_CLASSPATH=simpleechoserver.jar 
+
+E:\code2\GmSSL-1\java>REM Startup configuration 
+
+E:\code2\GmSSL-1\java>set PR_STARTUP=auto 
+
+E:\code2\GmSSL-1\java>set PR_STARTMODE=jvm 
+
+E:\code2\GmSSL-1\java>set PR_STARTCLASS=Prunssrv 
+
+E:\code2\GmSSL-1\java>set PR_STARTMETHOD=prunsrvStartServer 
+
+E:\code2\GmSSL-1\java>REM Shutdown configuration 
+
+E:\code2\GmSSL-1\java>set PR_STOPMODE=jvm 
+
+E:\code2\GmSSL-1\java>set PR_STOPCLASS=Prunssrv 
+
+E:\code2\GmSSL-1\java>set PR_STOPMETHOD=prunsrvStopServer 
+
+E:\code2\GmSSL-1\java>set PR_STOPTIMEOUT=120 
+
+E:\code2\GmSSL-1\java>REM JVM configuration 
+
+E:\code2\GmSSL-1\java>set PR_JVMMS=256 
+
+E:\code2\GmSSL-1\java>set PR_JVMMX=1024 
+
+E:\code2\GmSSL-1\java>set PR_JVMSS=4000 
+
+E:\code2\GmSSL-1\java>REM JVM options 
+
+E:\code2\GmSSL-1\java>set prunsrv_port=8080 
+
+E:\code2\GmSSL-1\java>set prunsrv_server=localhost 
+
+E:\code2\GmSSL-1\java>set PR_JVMOPTIONS=-Dprunsrv.port=8080;-Dprunsrv.server=localhost 
+
+E:\code2\GmSSL-1\java>REM current file 
+
+E:\code2\GmSSL-1\java>set "SELF=E:\javadaemon\service.bat" 
+
+E:\code2\GmSSL-1\java>REM current directory 
+
+E:\code2\GmSSL-1\java>set "CURRENT_DIR=E:\code2\GmSSL-1\java" 
+
+E:\code2\GmSSL-1\java>REM start - This takes the input from installService and places it between x's 
+
+E:\code2\GmSSL-1\java>REM - if there are none then you get xx as a null check 
+
+E:\code2\GmSSL-1\java>if "x"**22***"x" == "xx" goto displayUsage 
+
+E:\code2\GmSSL-1\java>set SERVICE_CMD="**22***" 
+
+E:\code2\GmSSL-1\java>REM ahift moves to next field 
+
+E:\code2\GmSSL-1\java>shift
+
+E:\code2\GmSSL-1\java>if "xGmSSL.objx" == "xx" goto checkServiceCmd 
+
+E:\code2\GmSSL-1\java>if /I "**22***" == install goto doInstall 
+
+E:\code2\GmSSL-1\java>if /I "**22***" == remove goto doRemove 
+
+E:\code2\GmSSL-1\java>if /I "**22***" == uninstall goto doRemove 
+
+E:\code2\GmSSL-1\java>echo Unknown parameter ""**22***"" 
+Unknown parameter ""**22***""
+
+E:\code2\GmSSL-1\java>echo.
+
+
+E:\code2\GmSSL-1\java>echo Usage: service.bat install/remove 
+Usage: service.bat install/remove
+
+E:\code2\GmSSL-1\java>goto end 
+
+E:\code2\GmSSL-1\java>echo Exiting service.bat ... 
+Exiting service.bat ...
+
+E:\code2\GmSSL-1\java>cd "E:\code2\GmSSL-1\java" 
+	link ../libcrypto.lib ws2_32.lib gdi32.lib advapi32.lib crypt32.lib user32.lib /nologo /dll /out:gmssljni.dll GmSSL.obj gmssl_err.obj
+   正在创建库 gmssljni.lib 和对象 gmssljni.exp
+	echo "***over**" gmssljni.dll
+
+E:\code2\GmSSL-1\java>setlocal
+
+E:\code2\GmSSL-1\java>set SERVICE_NAME=SimpleEchoServer 
+
+E:\code2\GmSSL-1\java>set PR_INSTALL=E:\javadaemon\prunsrv.exe 
+
+E:\code2\GmSSL-1\java>set PR_DESCRIPTION="Simple Echo Server Service" 
+
+E:\code2\GmSSL-1\java>REM Service log configuration 
+
+E:\code2\GmSSL-1\java>set PR_LOGPREFIX=SimpleEchoServer 
+
+E:\code2\GmSSL-1\java>set PR_LOGPATH=E:\javadaemon\\ 
+
+E:\code2\GmSSL-1\java>set PR_STDOUTPUT=E:\javadaemon\\stdout.txt 
+
+E:\code2\GmSSL-1\java>set PR_STDERROR=E:\javadaemon\\stderr.txt 
+
+E:\code2\GmSSL-1\java>set PR_LOGLEVEL=Debug 
+
+E:\code2\GmSSL-1\java>REM Path to java installation 
+
+E:\code2\GmSSL-1\java>set PR_JVM=C:\Program Files\Java\jdk1.8.0_161\jre\bin\server\jvm.dll 
+
+E:\code2\GmSSL-1\java>set PR_CLASSPATH=simpleechoserver.jar 
+
+E:\code2\GmSSL-1\java>REM Startup configuration 
+
+E:\code2\GmSSL-1\java>set PR_STARTUP=auto 
+
+E:\code2\GmSSL-1\java>set PR_STARTMODE=jvm 
+
+E:\code2\GmSSL-1\java>set PR_STARTCLASS=Prunssrv 
+
+E:\code2\GmSSL-1\java>set PR_STARTMETHOD=prunsrvStartServer 
+
+E:\code2\GmSSL-1\java>REM Shutdown configuration 
+
+E:\code2\GmSSL-1\java>set PR_STOPMODE=jvm 
+
+E:\code2\GmSSL-1\java>set PR_STOPCLASS=Prunssrv 
+
+E:\code2\GmSSL-1\java>set PR_STOPMETHOD=prunsrvStopServer 
+
+E:\code2\GmSSL-1\java>set PR_STOPTIMEOUT=120 
+
+E:\code2\GmSSL-1\java>REM JVM configuration 
+
+E:\code2\GmSSL-1\java>set PR_JVMMS=256 
+
+E:\code2\GmSSL-1\java>set PR_JVMMX=1024 
+
+E:\code2\GmSSL-1\java>set PR_JVMSS=4000 
+
+E:\code2\GmSSL-1\java>REM JVM options 
+
+E:\code2\GmSSL-1\java>set prunsrv_port=8080 
+
+E:\code2\GmSSL-1\java>set prunsrv_server=localhost 
+
+E:\code2\GmSSL-1\java>set PR_JVMOPTIONS=-Dprunsrv.port=8080;-Dprunsrv.server=localhost 
+
+E:\code2\GmSSL-1\java>REM current file 
+
+E:\code2\GmSSL-1\java>set "SELF=E:\javadaemon\service.bat" 
+
+E:\code2\GmSSL-1\java>REM current directory 
+
+E:\code2\GmSSL-1\java>set "CURRENT_DIR=E:\code2\GmSSL-1\java" 
+
+E:\code2\GmSSL-1\java>REM start - This takes the input from installService and places it between x's 
+
+E:\code2\GmSSL-1\java>REM - if there are none then you get xx as a null check 
+
+E:\code2\GmSSL-1\java>if "x"***over**"x" == "xx" goto displayUsage 
+
+E:\code2\GmSSL-1\java>set SERVICE_CMD="***over**" 
+
+E:\code2\GmSSL-1\java>REM ahift moves to next field 
+
+E:\code2\GmSSL-1\java>shift
+
+E:\code2\GmSSL-1\java>if "xgmssljni.dllx" == "xx" goto checkServiceCmd 
+
+E:\code2\GmSSL-1\java>if /I "***over**" == install goto doInstall 
+
+E:\code2\GmSSL-1\java>if /I "***over**" == remove goto doRemove 
+
+E:\code2\GmSSL-1\java>if /I "***over**" == uninstall goto doRemove 
+
+E:\code2\GmSSL-1\java>echo Unknown parameter ""***over**"" 
+Unknown parameter ""***over**""
+
+E:\code2\GmSSL-1\java>echo.
+
+
+E:\code2\GmSSL-1\java>echo Usage: service.bat install/remove 
+Usage: service.bat install/remove
+
+E:\code2\GmSSL-1\java>goto end 
+
+E:\code2\GmSSL-1\java>echo Exiting service.bat ... 
+Exiting service.bat ...
+
+E:\code2\GmSSL-1\java>cd "E:\code2\GmSSL-1\java" 
