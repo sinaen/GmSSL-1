@@ -4,6 +4,7 @@ JAVADLL=gmssljni.dll
 CC=cl
 CFLAGS=-DNDEBUG -W3 -wd4090 -Gs0 -GF -Gy -nologo -DOPENSSL_SYS_WIN32  -DWIN32_LEAN_AND_MEAN -DUNICODE -D_UNICODE /O2 
 LD=link
+MYLIB=lib
 LDFLAGS=/nologo /dll
 EX_LIBS=ws2_32.lib gdi32.lib advapi32.lib crypt32.lib user32.lib
 LIB_CFLAGS=
@@ -28,6 +29,7 @@ gmssl_err.obj:
 	$(CC)  /I "." /I "..\include" $(JAVAINCLUDE) $(CFLAGS) $(LIB_CFLAGS) -c "gmssl_err.c"
 $(JAVADLL): GmSSL.obj gmssl_err.obj
 	$(LD) $(LIBCRYPTOS) $(EX_LIBS) $(LDFLAGS) /out:$@ $**
+	$(MYLIB)  /nologo /out:gmssljniStatic.lib $**
 javatest:
 	$(JAVAC) GmSSL.java
 test:javatest $(JAVADLL)
